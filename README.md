@@ -8,7 +8,7 @@ I will go over git this wensday so everyone be prepared for learning as we move 
 
 ### Introduction
 
-While deep learning for brain disorder diagnosis has become pretty advanced over the past few years, many studies have only focused on the diagnosis of one disorder. There are countless studies showing how effective deep learning is to detect Alzheimer’s, or schizophrenia, or brain tumors, but not any that try to detect all three. * I don't know what the rest of it is.
+While deep learning for brain disorder diagnosis has become pretty advanced over the past few years, many studies have only focused on the diagnosis of one disorder. There are countless studies showing how effective deep learning is to detect Alzheimer’s, or schizophrenia, or brain tumors, but not any that try to detect all three. In this project, participants will use deep learning to classify 3-4 brain disorders, such as Alzheimer's and schizophrenia, using MRI brain scans, and then create a working probability model to combine and analyze the results.
 
 ### Scope / Goals
 
