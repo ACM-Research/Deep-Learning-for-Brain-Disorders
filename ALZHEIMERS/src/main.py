@@ -1,19 +1,12 @@
-# we can import all kinds of models from torch
-from torchvision.models import resnet152
-
-from PIL.Image import open
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+# deps
 import matplotlib.image as mpimg
+import os
 
-"""
-plot an image
+# example dir
+CUR_DIR = "DATA/train/MildDemented/"
 
-plt.imshow(img)
-plt.savefig("mild.png")
-"""
-
-img = mpimg.imread("DATA/test/MildDemented/26 (19).jpg")
-
-# img.shape all images are the same 208x176 shape
+# read in an entire folder of files
+def gen_case(direc):
+    ims_list = os.listdir(direc)
+    ims_tensor = [mpimg.imread(direc + x) for x in ims_list]
+    return ims_tensor
