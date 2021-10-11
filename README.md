@@ -33,11 +33,8 @@ Most studies in the past have focused on a number of tasks including segmentatio
 These will probably be renamed and updated as we go
 
 - **main** - main branch where the final project is contained
-- **data** - data cleaning and exploration tasks
-- **brn** - brain tumor task
-- **alz** - alzheimers task
-- **sch** - schitzophrenia task
-- **exp** - experimental tasks
+- **dev** - branch for wip features
+- **task** - branch for a particular task will be named after that task
 
 ### Contributors
 
