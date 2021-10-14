@@ -16,6 +16,7 @@ def gen_case(direc):
 # shape of one img is (208, 176)
 imgs = gen_case(CUR_DIR)
 
+# labels series
 labels = np.tile(1, 717)
 
 # create two series
@@ -28,5 +29,11 @@ print(labels.head())
 print("\nIMGS:\n")
 print(imgs.head())
 
+# produces a data frame
 df = pd.concat([imgs, labels], axis=1, join='outer')
+
+# output the dataframe that we produced
 print(df.head())
+
+# you could save this to csv if you wanted to but it's kinda useless here
+# you would only want to read in csv data most of the time
