@@ -4,7 +4,7 @@
 This is the repo for the "Deep Learning for Brain Disorders" project at ACM Research. Content will begin to be added keep in mind we should branch changes and merge to main whenever those changes are complete. **DO NOT** commit to main please submit a pull request and have someone review your code.
 
 
-I will go over git this wensday so everyone be prepared for learning as we move into the code section of this project!
+I will go over git this Wednesday so everyone be prepared for learning as we move into the code section of this project!
 
 ### Introduction
 
@@ -12,7 +12,7 @@ While deep learning for brain disorder diagnosis has become pretty advanced over
 
 ### Scope / Goals
 
-The goal of the project is to use deep learning in order to better understand / diagnose brain disorders in real world situations. Our scope here is to cover 3-4 brain disorders, a possible longterm goal is to develop a more general extensible model.
+The goal of the project is to use deep learning in order to better understand / diagnose brain disorders in real world situations. Our scope here is to cover 3-4 brain disorders, a possible long-term goal is to develop a more general extensible model.
 
 ### Differentiation
 
