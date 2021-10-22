@@ -4,8 +4,6 @@ import pandas as pd
 import matplotlib.image as mpimg
 import numpy as np
 
-df = pd.DataFrame()
-
 paths = []
 label = {}
 
@@ -26,15 +24,23 @@ images = pd.Series(images)
 print(label)
 
 # hardcoded time
-l1 = pd.Series(np.tile(1, label['./DATA/train/MildDemented']))
-l2 = pd.Series(np.tile(2, label['./DATA/train/ModerateDemented']))
-l3 = pd.Series(np.tile(3, label['./DATA/train/NonDemented']))
-l4 = pd.Series(np.tile(4, label['./DATA/train/VeryMildDemented']))
+l1 = np.tile(1, label['./DATA/train/MildDemented'])
+l2 = np.tile(2, label['./DATA/train/ModerateDemented'])
+l3 = np.tile(3, label['./DATA/train/NonDemented'])
+l4 = np.tile(4, label['./DATA/train/VeryMildDemented'])
 
-labels = pd.concat([l1, l2, l3, l4], axis=0)
+# labels
+labels = pd.Series(np.concatenate([l1, l2, l3, l4]))
 
-# I just realized we don't need to put these into a dataframe
-print(labels.shape)
-print(images.shape)
+# finally
+data = {"Images": images, "Labels": labels}
+df = pd.concat(data, axis=1)
+df = df.sample(frac=1).reset_index(drop=True)
+
+print(df.head())
+
+print(df["Images"][0].shape)
+
+# df.to_csv("train.csv")
 
 """DATA PROCESSING COMPLETE"""
