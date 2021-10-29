@@ -1,0 +1,1 @@
+{"duration": 2.2828638553619385, "input_args": {"epi_imgs": "['DATA/ABIDE_50054.nii']", "lower_cutoff": "0.2", "upper_cutoff": "0.85", "connected": "True", "opening": "2", "threshold": "0.5", "target_affine": "None", "target_shape": "None", "exclude_zeros": "False"}}
