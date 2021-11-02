@@ -1,0 +1,98 @@
+\documentclass[20pt,margin=1in,innermargin=-4.5in,blockverticalspace=-0.25in]{tikzposter}
+\geometry{paperwidth=42in,paperheight=32.5in}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage{uwtheme}
+\usepackage{multicol}
+
+
+\usepackage{mwe} % for placeholder images
+
+\addbibresource{refs.bib}
+
+% set theme parameters
+\tikzposterlatexaffectionproofoff
+\usetheme{UWTheme}
+\usecolorstyle{UWStyle}
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\title{\parbox{\linewidth}{\centering Project Title}}
+
+\author{Team Members and Faculty Advisor}
+\titlegraphic{\includegraphics[width=0.18\textwidth]{acm_research_banner_dark.png}}
+% begin document
+\begin{document}
+\maketitle
+\centering
+\begin{columns}
+    \column{0.32}
+    \block{Abstract}{
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem. Duis sed lacus in elit sodales aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida velit et commodo luctus. Integer volutpat fermentum dictum. Nulla molestie viverra velit in aliquet. Quisque id finibus elit. Ut efficitur erat at nisi malesuada, vitae interdum ex auctor. Praesent rhoncus mattis viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut ipsum nisl. Donec lobortis consectetur nulla sit amet tincidunt.
+         \\
+    }
+    \block{Data}{
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem. Duis sed lacus in elit sodales aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida velit et commodo luctus. Integer volutpat fermentum dictum. Nulla molestie viverra velit in aliquet.
+         \\
+
+        \begin{tikzfigure}[ACM Research]
+            \includegraphics[width=0.5\linewidth]{TransparentResearchIconFlame.png}
+        \end{tikzfigure}
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem. Duis sed lacus in elit sodales aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida velit et commodo luctus. Integer volutpat fermentum dictum.
+         \\
+    }
+    \block{Approach}{
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem. Duis sed lacus in elit sodales aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida velit et commodo luctus. Integer volutpat fermentum dictum. Nulla molestie viverra velit in aliquet. Quisque id finibus elit. Ut efficitur erat at nisi malesuada, vitae interdum ex auctor. Praesent rhoncus mattis viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut ipsum nisl. Donec lobortis consectetur nulla sit amet tincidunt.
+    }
+    \column{0.36}
+    \block{Methods}{
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem. Duis sed lacus in elit sodales aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida velit et commodo luctus. Integer volutpat fermentum dictum. Nulla molestie viverra velit in aliquet. Quisque id finibus elit. Ut efficitur erat at nisi malesuada, vitae interdum ex auctor. Praesent rhoncus mattis viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut ipsum nisl. Donec lobortis consectetur nulla sit amet tincidunt.
+
+        Phasellus suscipit sapien nec nisi commodo, vitae luctus diam condimentum. Sed pulvinar at sem ut rutrum. Phasellus vel lacus nec est pellentesque rhoncus vitae eget arcu. Mauris facilisis quam mauris, a iaculis diam commodo et. Aliquam arcu leo, aliquet ac vestibulum quis, dapibus nec sem. Fusce orci libero, pretium sit amet lectus sit amet, sodales hendrerit mauris. Mauris vel ullamcorper mi, ut faucibus est. Sed at luctus odio. Aenean eu elit a felis vehicula tempus ac volutpat mi. Praesent ultrices enim et ipsum congue dictum. Mauris lobortis ante at mi viverra pellentesque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras a dolor nisl. Etiam vitae urna at purus tempus semper vitae sed tortor. Aliquam eleifend leo a viverra tincidunt.
+
+        \begin{tikzfigure}[ACM Research]
+            \includegraphics[width=0.5\linewidth]{TransparentResearchIconFlame.png}
+        \end{tikzfigure}
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem. Duis sed lacus in elit sodales aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida velit et commodo luctus. Integer volutpat fermentum dictum. Nulla molestie viverra velit in aliquet. Quisque id finibus elit. Ut efficitur erat at nisi malesuada, vitae interdum ex auctor. Praesent rhoncus mattis viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut ipsum nisl. Donec lobortis consectetur nulla sit amet tincidunt.
+
+        Phasellus suscipit sapien nec nisi commodo, vitae luctus diam condimentum. Sed pulvinar at sem ut rutrum. Phasellus vel lacus nec est pellentesque rhoncus vitae eget arcu. Mauris facilisis quam mauris, a iaculis diam commodo et. Aliquam arcu leo, aliquet ac vestibulum quis, dapibus nec sem. Fusce orci libero, pretium sit amet lectus sit amet, sodales hendrerit mauris. Mauris vel ullamcorper mi, ut faucibus est. Sed at luctus odio. Aenean eu elit a felis vehicula tempus ac volutpat mi. Praesent ultrices enim et ipsum congue dictum. Mauris lobortis ante at mi viverra pellentesque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras a dolor nisl. Etiam vitae urna at purus tempus semper vitae sed tortor. Aliquam eleifend leo a viverra tincidunt.
+    }
+
+    \column{0.32}
+    \block{Conclusion}{
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem. Duis sed lacus in elit sodales aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida velit et commodo luctus. Integer volutpat fermentum dictum. Nulla molestie viverra velit in aliquet. Quisque id finibus elit. Ut efficitur erat at nisi malesuada, vitae interdum ex auctor. Praesent rhoncus mattis viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut ipsum nisl. Donec lobortis consectetur nulla sit amet tincidunt.
+
+        \begin{tikzfigure}[ACM Research]
+            \includegraphics[width=0.5\linewidth]{TransparentResearchIconFlame.png}
+        \end{tikzfigure}
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem.
+    }
+
+    \block{References}{
+        \vspace{0.4em}
+        \begin{footnotesize}
+        \printbibliography[heading=none]
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem.
+
+        %\end{thebibliography}
+        \end{footnotesize}
+    }
+
+    \block{Acknowledgements}{
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper vulputate ultricies. Mauris volutpat efficitur arcu, nec molestie nulla. Suspendisse condimentum neque id magna venenatis tristique quis quis lacus. Maecenas in tincidunt lorem.
+    }
+\end{columns}
+\end{document}

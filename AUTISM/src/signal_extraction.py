@@ -9,7 +9,7 @@ def main():
     masker = NiftiLabelsMasker(labels_img=atlas.maps, standardize=True)
     time_series = masker.fit_transform(sys.argv[0])
 
-    print(time_series.shape)
+    print(time_series)
 
 if __name__ == "__main__":
     main()
