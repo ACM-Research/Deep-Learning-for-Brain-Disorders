@@ -19,8 +19,9 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y)
 
     # TRAIN THE MODEL
-    model.fit(X_train, y_train, epochs=30)
+    model.fit(X_train, y_train, epochs=15)
     model.evaluate(X_test, y_test)
+    model.save("alz-model")
 
 if __name__ == "__main__":
     main()
