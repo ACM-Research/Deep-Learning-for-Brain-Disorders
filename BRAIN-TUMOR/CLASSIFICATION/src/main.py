@@ -17,10 +17,10 @@ model = Sequential([
 
     # encoder
     keras.layers.Conv2D(16, kernel_size=3, strides=(2, 2), padding="same", activation="relu", kernel_initializer="he_normal"),
-    keras.layers.Conv2D(16, kernel_size=3, strides=(2, 2), padding="same", activation="relu", kernel_initializer="he_normal"),
+    keras.layers.Conv2D(32, kernel_size=3, strides=(2, 2), padding="same", activation="relu", kernel_initializer="he_normal"),
     layers.MaxPooling2D(pool_size=(2, 2), padding="same"),
-    keras.layers.Conv2D(16, kernel_size=3, strides=(2, 2), padding="same", activation="relu", kernel_initializer="he_normal"),
-    keras.layers.Conv2D(16, kernel_size=3, strides=(2, 2), padding="same", activation="relu", kernel_initializer="he_normal"),
+    keras.layers.Conv2D(64, kernel_size=3, strides=(2, 2), padding="same", activation="relu", kernel_initializer="he_normal"),
+    keras.layers.Conv2D(128, kernel_size=3, strides=(2, 2), padding="same", activation="relu", kernel_initializer="he_normal"),
     layers.MaxPooling2D(pool_size=(2, 2), padding="same"),
 
     # decoder
