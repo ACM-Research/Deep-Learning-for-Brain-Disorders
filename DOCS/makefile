@@ -1,2 +1,0 @@
-build: 
-	pdflatex main.tex
