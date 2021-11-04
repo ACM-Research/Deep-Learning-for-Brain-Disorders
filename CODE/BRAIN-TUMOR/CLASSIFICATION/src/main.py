@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 HEIGHT, WIDTH = 256, 256
 
 def main():
-    df = pd.read_csv("train.csv")
+    df = pd.read_csv("DATA/train.csv")
     y = df["Class"]
     ims = []
     for i in range(len(df)):
