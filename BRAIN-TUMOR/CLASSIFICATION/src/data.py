@@ -26,7 +26,7 @@ df = pd.DataFrame()
 # create columns
 df["Class"] = labels
 df["Paths"] = paths
-df["Pixel"] = df["Paths"].map(lambda x: np.resize(imread(x), (HEIGHT, WIDTH, 3)))
 
 # shuffle
 df = df.sample(frac=1)
+df.to_csv("train.csv")
