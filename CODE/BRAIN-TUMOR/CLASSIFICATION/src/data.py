@@ -29,4 +29,4 @@ df["Paths"] = paths
 
 # shuffle
 df = df.sample(frac=1)
-df.to_csv("train.csv")
+df.to_csv("DATA/train.csv")
