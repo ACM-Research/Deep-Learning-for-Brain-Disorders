@@ -1,7 +1,9 @@
 from nilearn import image
 from nilearn import datasets
 from nilearn import input_data
+import nibabel as nib
 from sklearn.covariance import GraphicalLassoCV
+import matplotlib.pyplot as plt
 
 # so there's various data that we need for prediction
 # therefore there's different pipelines we need for data processing
@@ -27,18 +29,19 @@ def dPipeline(path: str):
    """
 
    # load image
-   sliceIm = image.load_img(path)
+   sliceIm = nib.load(path)
+   sliceIm = sliceIm.get_fdata()
    # index the first brain in the 4D set of brains
-   sliceIm = image.index_img(path, 0)
+   sliceIm = sliceIm[:, :, :, 0]
    # get the number of slices in the volume data and take the halfway point
-   numIms = sliceIm.shape[0] // 2
+   mid = sliceIm.shape[2] // 2
    # index the halfway point that's our image :)
-   sliceIm = sliceIm[numIms, :, :]
+   sliceIm = sliceIm[:, :, mid]
 
    # fetch the atlas
-   atlas = datasets.fetch_atlas_aal()
+   atlas = datasets.fetch_atlas_msdl()
    # create a maps masker
-   masker = input_data.NiftiMapsMasker(maps_img=atlas.maps, standardize=True)
+   masker = input_data.NiftiMapsMasker(maps_img=atlas.maps)
    # extract time series information from 4D brain data
    time_series = masker.fit_transform(path)
    # calculate sparse inverse covariance
@@ -49,6 +52,9 @@ def dPipeline(path: str):
    connDat = estim.covariance_
    
    # signal data for schizophrenia
-   signDat = time_series
+   signDat = time_series[mid]
 
    return sliceIm, connDat, signDat
+
+# test case
+sliceIm, connDat, signDat = dPipeline("rest.nii.gz")
