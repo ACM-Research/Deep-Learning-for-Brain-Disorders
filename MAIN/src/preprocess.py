@@ -1,6 +1,7 @@
 from nilearn import image
 from nilearn import datasets
 from nilearn import input_data
+import numpy as np
 import nibabel as nib
 from sklearn.covariance import GraphicalLassoCV
 import matplotlib.pyplot as plt
@@ -20,11 +21,13 @@ def dPipeline(path: str):
       - Model takes in image data
 
    This method returns:
-   1: sliceIm
+   1: alz
       - Image slice for Alz. and Brn Tumor
-   2: connDat
+   2: brn
       - Connection data for Autism
-   3: signDat
+   3: conn
+      - Signal data for Schizophrenia
+   4: signal
       - Signal data for Schizophrenia
    """
 
@@ -37,6 +40,11 @@ def dPipeline(path: str):
    mid = sliceIm.shape[2] // 2
    # index the halfway point that's our image :)
    sliceIm = sliceIm[:, :, mid]
+   sliceIm = np.resize(sliceIm, (256, 256, 3))
+   alzSlice = sliceIm[None, :, :, :]
+
+   sliceIm = np.resize(sliceIm, (224, 224, 3))
+   brnSlice = sliceIm[None, :, :, :]
 
    # fetch the atlas
    atlas = datasets.fetch_atlas_msdl()
@@ -46,15 +54,16 @@ def dPipeline(path: str):
    time_series = masker.fit_transform(path)
    # calculate sparse inverse covariance
    estim = GraphicalLassoCV()
+   # calculate covariance with graphical CV
    estim.fit(time_series)
-
    # connection data for autism
    connDat = estim.covariance_
-   
-   # signal data for schizophrenia
-   signDat = time_series[mid]
 
-   return sliceIm, connDat, signDat
+   # Schizophrenia Hypothenically
+   atlas = datasets.fetch_atlas_aal()
+   masker = input_data.NiftiMapsMasker(maps_img=atlas.maps)
+   time_series = masker.fit_transform(path)
+   signDat = time_series
 
-# test case
-sliceIm, connDat, signDat = dPipeline("rest.nii.gz")
+   return alzSlice, brnSlice, connDat, signDat
+
