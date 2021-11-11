@@ -1,4 +1,4 @@
-% Created 2021-11-11 Thu 14:52
+% Created 2021-11-11 Thu 17:36
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -14,6 +14,8 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{MODELS.bib}
 \author{Logan Jackson}
 \date{\today}
 \title{MODELS}
@@ -30,19 +32,166 @@
 \tableofcontents
 
 
-\section{Convolutional Neural Network}
-\label{sec:orga5d4466}
-convolutional layers
-\section{Support Vector Classifier}
-\label{sec:org865e234}
+\section{Neural Networks}
+\label{sec:orgfb067f8}
+\subsection{Convolutional Neural Network}
+\label{sec:orgf3c3aa0}
+A convolutional neural network uses convolutions, that's why it's called a convolutional neural network. Instead of normal matrix operations we're instead using a convolution, in a normal feed forward network, there's an input layer, hidden layers and an output layer. Instead of the hidden layers being typical fully connected layers they are instead convolutional layers. A convolution can be defined as an operation on two functions that produces a third function that expresses how the shape of one is modified by the other. (\cite{albawi2017})
+
+\subsubsection{Convolutions}
+\label{sec:org24d4053}
+A convolution of the functions \(f\) and \(g\) can be written as \(f * g\) the symbol \(*\) denotes a convolution.
+A convolution is a particular kind of integral transform:
+$$
+(f*g)(t) := \int_{-\infty}^{\infty}f(t - \tau)g(\tau) d\tau
+$$
+There's explaination to this function to give a more intuitive understanding of it but I'm really lazy right now.
+
+\subsubsection{Network Architecture}
+\label{sec:org83a7fb6}
+Convolutional networks are similar to a normal feed forward network with the main difference being that we use convolutions instead of fully connected layers, a typical network may look something like:
+\begin{itemize}
+\item Input Layer of size (B, W, H, C)
+\item Convolution
+\item Max Pool
+\item Convolution
+\item Max Pool
+\end{itemize}
+Repeat these layers a few times, then ending with a few Dense layers to map to outputs. In code this may look something like this:
+\begin{verbatim}
+import torch
+import torch.nn as nn
+
+class CNN(nn.Module):
+    def __init__(self, in_channels, height, width, n_classes):
+        super(CNN, self).__init__()
+        # activation function
+        self.activation = nn.ReLU()
+
+        # first convolutional layer
+        self.conv1 = nn.Conv2d(in_channels, 16, (5, 5), padding=(2, 2))
+        self.pool1 = nn.MaxPool2d((2, 2), stride=2)
+
+        # second convolutional layer
+        self.conv2 = nn.Conv2d(16, 8, (2, 2), padding=(2, 2))
+        self.pool2 = nn.MaxPool2d((2, 2), stride=2)
+
+        # fully connected layer
+        self.flatten = nn.Flatten()
+        self.fc1 = nn.Linear(height*width*8, 120)
+        self.fc2 = nn.Linear(120, 84)
+
+        # output to number of classes predicts 1 of n_classes
+        self.output = nn.Linear(84, n_classes)
+
+    def forward(self, x):
+        # first convolutional layer
+        out = self.conv1(x)
+        out = self.activation(out)
+        out = self.pool1(out)
+
+        # second convolutional layer
+        out = self.conv2(out)
+        out = self.activation(out)
+        out = self.pool2(out)
+
+        # fully connected layers
+        out = self.flatten(out)
+        out = self.fc1(out)
+        out = self.fc2(out)
+
+        return self.output(out)
+
+\end{verbatim}
+
+
+\subsection{UNet}
+\label{sec:org7bd9cd8}
+Made up of this encoder -- decoder architecture combined with residual connections. UNet was specifically made for the task of medical image segmentation, which is perfect for us because that's exactly what we're trying to do. UNet starts with an convolutional encoding layer that looks very similar to a standard feed forward convolutional network but instead of flattening out and passing to Dense layers, the model is then decoded by a residual convolutional decoder, which outputs a mask that can be threshold to produce binary mask for segmentation.
+So it's all the same but instead of flattening the output of a convolutional layer there's instead a decoding layer that outputs a mask instead of Dense output of \(1\times n\) probability matrix for classification you get a \(n\times m\) mask to overlay on image. In addition you also have to implement the residual connections:
+
+\subsubsection{Residual Connections}
+\label{sec:orga6a0d57}
+Residual connections are added to combat vanishing gradient by adding outputs of previous layers to later layers
+\begin{verbatim}
+import torch
+import torch.nn as nn
+
+class Block(nn.Module):
+    def __init__(self):
+        super(Block, self).__init__()
+        self.inp = nn.Linear(1, 18)
+        self.act = nn.Sigmoid()
+        self.fc1 = nn.Linear(18, 1)
+
+    def forward(self, x):
+        out = self.inp(x)
+        out = self.act(out)
+        out = self.fc1(out)
+
+        return out
+
+class ResNet(nn.Module):
+    def __init__(self, height, width):
+        super(ResNet, self).__init__()
+        self.block1 = Block()
+        self.block2 = Block()
+        self.block3 = Block()
+
+    def forward(self, x):
+        rout = self.block1(x)
+        out = self.block2(rout)
+        # residual connection
+        out = self.block(rout) + rout
+
+        return out
+\end{verbatim}
+
+\subsubsection{Encoder Decoder}
+\label{sec:orgeb0ad26}
+Implementation of a very simple convolutional encoder decoder architecture:
+
+\begin{verbatim}
+import torch
+import torch.nn as nn
+
+class EncDec(nn.Module):
+    def __init__(self):
+        super(UNet, self).__init__()
+        self.encoder = nn.Sequential(
+            nn.Conv2d(1, 16, (2, 2), padding=(1, 1)),
+            nn.Conv2d(16, 32, (2, 2), padding=(1, 1)),
+            nn.Conv2d(32, 64, (2, 2), padding=(1, 1))
+        )
+        self.decoder = nn.Sequential(
+            nn.Conv2d(64, 32, (2, 2), padding=(1, 1)),
+            nn.Conv2d(32, 16, (2, 2), padding=(1, 1)),
+            nn.Conv2d(16, 8, (2, 2), padding=(1, 1))
+        )
+
+    def forward(self, x):
+        out = self.encoder(x)
+        out = self.decoder(out)
+
+        return out
+\end{verbatim}
+
+\section{Statistical Models}
+\label{sec:org257aa70}
+\subsection{Support Vector Classifier}
+\label{sec:org5348284}
 Explain a support vector machine draw hyper planes smth like that.
-\section{XGBoost}
-\label{sec:org2c1e511}
+\subsection{XGBoost}
+\label{sec:orge09e07d}
 Gradient boost decision tree
-\section{UNet}
-\label{sec:org88850ee}
-Made up of this encoder -- decoder
-\section{GraphicalLassoCV}
-\label{sec:org12bbf2c}
+\subsection{Data Extraction}
+\label{sec:orgce44384}
+\subsubsection{GraphicalLassoCV}
+\label{sec:orgb485094}
 Calculate sparse inverse covariance
+\subsubsection{KMeans}
+\label{sec:org8dabafa}
+Parcellate ROIs based on criteria
+\subsection{Noisy OR}
+\label{sec:orgcad6efa}
 \end{document}
