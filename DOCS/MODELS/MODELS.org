@@ -1,0 +1,14 @@
+#+TITLE: MODELS
+#+DATE: \today
+#+AUTHOR: Logan Jackson
+
+* Convolutional Neural Network
+convolutional layers
+* Support Vector Classifier
+Explain a support vector machine draw hyper planes smth like that.
+* XGBoost
+Gradient boost decision tree
+* UNet
+Made up of this encoder -- decoder
+* GraphicalLassoCV
+Calculate sparse inverse covariance
