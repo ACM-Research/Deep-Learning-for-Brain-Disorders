@@ -1,0 +1,63 @@
+% Created 2021-11-11 Thu 01:44
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Logan Jackson}
+\date{\today}
+\title{DATA}
+\hypersetup{
+ pdfauthor={Logan Jackson},
+ pdftitle={DATA},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Introduction}
+\label{sec:org4372add}
+The fundamental structure of the data that we are presenting is, represented by a tensor of rank n.
+
+\section{2D Brain Data}
+\label{sec:org8177715}
+In 2 dimensions the cross sections of a brain can be, presented as a matrix (2 tensor) \(W \times H\) but in order to pass
+this information to our model we usually need to also present an empty \(B\) dimension so that the model
+understands how many images we are passing in this case we're only passing a single image to the model so \(B=1\)
+by nesting the image into a single batch this raises the rank of the tensor by one making the resulting data a 3 tensor
+represented by a tuple \((B, H, W)\).
+
+\section{3D Brain Data}
+\label{sec:org7e99bdf}
+3D brain data is, represented similar to our 2D brain data but instead of \(B=1\) it's the number of slices that make
+up the volume of the brain, a typical brain scan may contain anywhere from 180-300 images. In addition to this both
+2D and 3D Brain data can also contain a \(C\) dimension where \(C\) represents the number of channels in the image
+for example a typical RGB picture contains 3 channels but in the case of our data we typically stick to 1 channel.
+When passing a channel in addition to the batch, height, and width there is now a channel raising the rank of the tensor
+by one again, in this case we can represent the shape of our tensor with a 4 tuple \((B, H, W, C)\)
+
+\section{4D Brain Data}
+\label{sec:org641f6fc}
+Intuitively as the dimensions go up you may think about how the data is, represented in real life. In the case of
+2D brain data this would be a cross section of the brain and in the case of 3D brain data this would be the whole
+volume of the brain. With 4D brain data you can think about this as a video of the whole brain over time, instead
+of a single whole brain volume you now have many brain volumes and can see how these brain volumes are changing
+over time this is particularly useful for extracting connectome data which will be, discussed later in the Autism
+section. In addition the tensor representation of the brain raises by one again to include \(T\) or the number of
+brains. In our data \(T = 180\) for Autism the shape of this tensor can be show with a 5 tuple \((T, B, H, W, C)\)
+\end{document}
