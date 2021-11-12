@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{a2017}
+S.~Albawi, T.~A. Mohammed, and S.~Al-Zawi, ``Understanding of a convolutional
+  neural network,'' in {\em 2017 International Conference on Engineering and
+  Technology (ICET)}, pp.~1--6, Ieee, 2017.
+
+\bibitem{r2015}
+O.~Ronneberger, P.~Fischer, and T.~Brox, ``U-net: Convolutional networks for
+  biomedical image segmentation,'' in {\em International Conference on Medical
+  image computing and computer-assisted intervention}, pp.~234--241, Springer,
+  2015.
+
+\bibitem{y2013}
+S.~Yang and S.~Natarajan, ``Knowledge intensive learning: Combining qualitative
+  constraints with causal independence for parameter learning in probabilistic
+  models,'' in {\em Joint European Conference on Machine Learning and Knowledge
+  Discovery in Databases}, pp.~580--595, Springer, 2013.
+
+\end{thebibliography}

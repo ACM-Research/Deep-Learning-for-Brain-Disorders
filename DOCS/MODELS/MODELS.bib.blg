@@ -1,5 +1,0 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
-[0] Config.pm:314> INFO - Logfile is 'MODELS.bib.blg'
-[80] biber:340> INFO - === Thu Nov 11, 2021, 17:35:14
-[183] Utils.pm:411> ERROR - Cannot find 'MODELS.bib.bcf'!
-[183] Biber.pm:132> INFO - ERRORS: 1
