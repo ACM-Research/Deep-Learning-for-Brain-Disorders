@@ -1,42 +1,49 @@
-![](https://raw.githubusercontent.com/ACM-Research/Deep-Learning-for-Brain-Disorders/main/DOCS/ACM_Research_Poster_Final.png)
+# Deep Learning For Brain Disorders
 
-## Deep Learning for Brain Disorders 🧠
+**ACM Research, Fall 2021**
 
-This is the repo for the "Deep Learning for Brain Disorders" project at ACM Research. Content will begin to be added keep in mind we should branch changes and merge to main whenever those changes are complete. **DO NOT** commit to main please submit a pull request and have someone review your code.
+![](DOCS/ACM_Research_Poster_Final.png)
 
+## Abstract
 
-I will go over git this Wednesday so everyone be prepared for learning as we move into the code section of this project!
+Pain and suffering you should check out the docs [here](DOCS)
 
-### Introduction
+## Background
 
-While deep learning for brain disorder diagnosis has become pretty advanced over the past few years, many studies have only focused on the diagnosis of one disorder. There are countless studies showing how effective deep learning is to detect Alzheimer’s, or schizophrenia, or brain tumors, but not any that try to detect all three. In this project, participants will use deep learning to classify 3-4 brain disorders, such as Alzheimer's and schizophrenia, using MRI brain scans, and then create a working probability model to combine and analyze the results.
+- Our research attempts to propose a vector for future research
+in creating more generalized models for brain disorder diagnosis
 
-### Scope / Goals
+## Data
 
-The goal of the project is to use deep learning in order to better understand / diagnose brain disorders in real world situations. Our scope here is to cover 3-4 brain disorders, a possible long-term goal is to develop a more general extensible model.
+- 2D Brain Data
+- 3D Brain Data
+- 4D Brain Data
+- Sources of each of these datasets
+- Nuero data hard to get
 
-### Differentiation
+## Models
 
-Most studies in the past have focused on a number of tasks including segmentation, classification, and localization. But usually limited to one disorder as well as one task. In this project we hope to do many, as well as work on more specificlly useful models for real world diagnosis i.e., you can classify brain tumors but it's much more useful to know **where** and how **big** those tumors are in a real world situation.
+- Various CNNs
+- XGBOOST
+- AugmentedOr
 
-### Timeline
+## Results
 
-[comment]: <> (TODO add dates!)
+There were results!
+- 94% ALZ - ACTUAL (86%)
+- 93% BRN - ACTUAL (92%)
+- 92% SCH - ACTUAL (???)
+- >70% COMBINED (UH OH)
 
-1. Data Cleaning / Collection and Preperation
-2. Classification Tasks
-3. Segmentation / Localization task
-4. OPTIONAL MORE GENERAL MODEL
-5. Poster / Putting it all together
+## Conclusions
 
-### Branches ?
+Original Models were overfit. New Models didn't have much time to be trained
+better generalization but lower accuracy, causing combinitive model to have
+poor preformance. I basically wrote this in a day so it's really scuff :((
 
-These will probably be renamed and updated as we go
+## Contributors
+- [Logan Jackson](https://github.com/LoganLieou)
 
-- **main** - main branch where the final project is contained
-- **dev** - branch for wip features
-- **task** - branch for a particular task will be named after that task
+## References
 
-### Contributors
-
-**TODO** update this later!
+**TODO**
