@@ -1,3 +1,5 @@
+![]("./DOCS/ACM_Research_Poster_Final.png")
+
 ## Deep Learning for Brain Disorders 🧠
 
 This is the repo for the "Deep Learning for Brain Disorders" project at ACM Research. Content will begin to be added keep in mind we should branch changes and merge to main whenever those changes are complete. **DO NOT** commit to main please submit a pull request and have someone review your code.
