@@ -1,4 +1,4 @@
-![]("./DOCS/ACM_Research_Poster_Final.png")
+![]("https://raw.githubusercontent.com/ACM-Research/Deep-Learning-for-Brain-Disorders/main/DOCS/ACM_Research_Poster_Final.png")
 
 ## Deep Learning for Brain Disorders 🧠
 
