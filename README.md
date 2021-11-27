@@ -33,7 +33,7 @@ There were results!
 - 94% ALZ - ACTUAL (86%)
 - 93% BRN - ACTUAL (92%)
 - 92% SCH - ACTUAL (???)
-- >70% COMBINED (UH OH)
+- 70% COMBINED (UH OH)
 
 ## Conclusions
 
