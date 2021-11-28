@@ -52,8 +52,10 @@ Participants
 - [Suhrutha Bushan](https://github.com/suhrutha618)
 - [Jie Chen](https://github.com/Wnedyz)
 - [Logan Jackson](https://github.com/LoganLieou)
+
 Research Lead
 - [Divya Gollapalli](https://github.com/divya-g-248) 
+
 Faculty Advisor
 - [Dr. Sriraam Natarajan](https://personal.utdallas.edu/~sriraam.natarajan/)
 
