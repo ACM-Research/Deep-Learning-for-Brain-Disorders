@@ -43,6 +43,8 @@ Original Models were overfit. New Models didn't have much time to be trained
 better generalization but lower accuracy, causing combinitive model to have
 poor preformance. I basically wrote this in a day so it's really scuff :((
 
+We were able to obtain highly accurate results using convolutional networks on our data on certain types of data and tasks, ie. Alzheimer's disease. We found that certain models worked better than others. In the case of Alzheimer's disease, we were able to get fairly solid results using convolutional neural networks, where as on schizophrenia, we attempted custom feature extraction to get better results using statistical methods. This allows us to use less data as well as get more accurate results from those smaller datasets. We were able to combine results for similar datasets using Noisy OR. A problem with doing an overall general model was pipe lining the data in order to pass a given piece of data to all of our models.
+
 ## Contributors
 - [Samantha Agron](https://github.com/sagron16) 
 - [Suhrutha Bushan](https://github.com/suhrutha618)
