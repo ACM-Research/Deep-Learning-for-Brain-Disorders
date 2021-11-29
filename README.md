@@ -35,7 +35,7 @@ There were results!
 - 94% ALZ
 - 93% BRN
 - 92% SCH 
-- >70% COMBINED
+- 70% COMBINED
 
 ## Conclusions
 
