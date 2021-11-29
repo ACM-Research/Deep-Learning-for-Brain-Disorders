@@ -32,10 +32,10 @@ Our research attempts to propose a vector for future research in creating more g
 ## Results
 
 There were results!
-- 94% ALZ - ACTUAL (86%)
-- 93% BRN - ACTUAL (92%)
-- 92% SCH - ACTUAL (???)
-- 70% COMBINED (UH OH)
+- 94% ALZ
+- 93% BRN
+- 92% SCH 
+- >70% COMBINED
 
 ## Conclusions
 
