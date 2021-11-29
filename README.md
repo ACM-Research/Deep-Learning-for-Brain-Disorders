@@ -31,11 +31,10 @@ Our research attempts to propose a vector for future research in creating more g
 
 ## Results
 
-There were results!
-- 94% ALZ
-- 93% BRN
-- 92% SCH 
-- 70% COMBINED
+- ALZHEIMER'S DISEASE: 94%
+- BRAIN TUMORS: 93%
+- SCHIZOPHRENIA: 92% 
+- COMBINED/ENSEMBLE: 70%
 
 ## Conclusions
 
@@ -68,5 +67,3 @@ Faculty Advisor
 [3] : Yang, S., Natarajan, S., ''Knowledge intensive learning: Combining qualitative constraints with causal independence for parameter learning in probabilistic models,'' in { Joint European Conference on Machine Learning and Knowledge Discovery in Databases}, pp.~580--595, Springer, 2013.
        
 [4] : Zhang, L., Wang, M., Liu, M., & Zhang, D. (1AD, January 1). A survey on Deep Learning for neuroimaging-based Brain Disorder Analysis. Frontiers.
-
-**TODO**
