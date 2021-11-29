@@ -13,11 +13,9 @@ Our research attempts to propose a vector for future research in creating more g
 
 ## Data
 
-- 2D Brain Data
-- 3D Brain Data
-- 4D Brain Data
-- Sources of each of these datasets
-- Nuero data hard to get
+- 2D Brain Data: specific cross sections of the brain
+- 3D Brain Data: series of cross sections that represent a 3D brain
+- 4D Brain Data: series of cross sections that represent a 3D brain over time
 
 ## Models
 
