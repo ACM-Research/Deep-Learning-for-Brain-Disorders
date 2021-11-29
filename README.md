@@ -27,6 +27,15 @@ Our research attempts to propose a vector for future research in creating more g
 - AugmentedOr
   - Noisy OR was used to combine outputs of various models in order to get the general case classification of disorders.
 
+## Methods
+
+- Alzheimer's Disease
+  - A multimodal classification of different stages of Alzheimer’s: Non-Demented, Mild Demented, Moderate Demented, and Very Demented was done. The model takes 2D brain data represented with 4 tensors of shape (B,H,W,C) where both B=1, and C=1 because the 2D convolutional function takes a 4 tensor input. Then the convolutional network extracts information from the image and the output of the last convolutional layer is flattened and passed to a fully connected layer in order to map 4 different output values (Non-Demented, Mild Demented, Moderate Demented, and Very Demented).
+- Brain Tumors
+  - A similar method to Alzheimer's disease was used where instead of mapping 4 classes, only 1 was mapped. This makes brain tumors a binary classification problem. For segmentation, U-Net was utilized.
+- Schizophrenia 
+  - Feature extraction was done on MRI scans using the automated anatomical labeling (AAL) atlas, as well as spatial independent component analysis, sliding time window correlation, and k-means clustering of windowed correlation matrices. K-means is used to cluster brain regions based on criteria.
+
 ## Results
 
 - ALZHEIMER'S DISEASE: 94%
