@@ -15,10 +15,10 @@ Our research attempts to propose a vector for future research in creating more g
 
 - 2D Brain Data: individual cross sections of the brain
     <br/>
-    ![](DOCS/NormalBrain.jpeg =250x)
+    <img src="DOCS/NormalBrain.jpeg" width="250"/>
 - 3D Brain Data: series of cross sections that represent a volume of brain
     <br/>
-    ![](DOCS/NormalBrain.gif =300x)
+    <img src="DOCS/NormalBrain.gif" width="300" />
 - 4D Brain Data: series of 3D brains over time this was useful extracting connectome information
     <br/>
     ![](DOCS/Connectome.png)
