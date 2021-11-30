@@ -6,16 +6,22 @@
 
 ## Abstract
 
-Deep learning has become a methodology of choice for medical image analysis due to discovering informative representations without having to know professional knowledge. Due to the creation of algorithms to train deep neural networks, deep learning succeeds in most artificial intelligence applications [1]. 
+Deep learning has become a methodology of choice for medical image analysis due to discovering informative representations without having to know professional knowledge. Due to the creation of algorithms to train deep neural networks, deep learning succeeds in many artificial intelligence applications [1]. 
 However, a majority of research has focused on the diagnosis of one brain disorder. Many studies have gone over models that diagnose one disorder in the brain but not multiple at once. In this case, the lack of multiple disorder diagnosis in one model is what this project aims to solve. 
 By constructing a probability model that combines and analyzes the results of brain scans, a general extensible model can be made. This model aims to better understand the diagnosis of brain disorders in real-world situations as well as solve the issue of having to go through multiple models that only diagnose one disorder each.
 Our research attempts to propose a vector for future research in creating more generalized models for brain disorder diagnosis.
 
 ## Data
 
-- 2D Brain Data: specific cross sections of the brain
-- 3D Brain Data: series of cross sections that represent a 3D brain
-- 4D Brain Data: series of cross sections that represent a 3D brain over time
+- 2D Brain Data: individual cross sections of the brain
+    <br/>
+    ![](DOCS/NormalBrain.jpeg =250x)
+- 3D Brain Data: series of cross sections that represent a volume of brain
+    <br/>
+    ![](DOCS/NormalBrain.gif =300x)
+- 4D Brain Data: series of 3D brains over time this was useful extracting connectome information
+    <br/>
+    ![](DOCS/Connectome.png)
 
 ## Models
 
@@ -41,7 +47,7 @@ Our research attempts to propose a vector for future research in creating more g
 - ALZHEIMER'S DISEASE: 94%
 - BRAIN TUMORS: 93%
 - SCHIZOPHRENIA: 92% 
-- COMBINED/ENSEMBLE: 70%
+- COMBINED/ENSEMBLE: >70%
 
 ## Conclusions
 
@@ -66,9 +72,9 @@ Faculty Advisor
 ## References
 
 [1] : Albawi, S., T.~A. Mohammed, and S.~Al-Zawi, ''Understanding of a convolutional neural network,'' in { 2017 International Conference on Engineering and Technology (ICET)}, pp.~1--6, Ieee, 2017.
-        
+
 [2] : Segato, A., Marzullo, A., Calimeri, F., & De Momi, E. (2020, October 13). Artificial Intelligence for Brain Diseases: A systematic review. APL bioengineering.
-        
+
 [3] : Yang, S., Natarajan, S., ''Knowledge intensive learning: Combining qualitative constraints with causal independence for parameter learning in probabilistic models,'' in { Joint European Conference on Machine Learning and Knowledge Discovery in Databases}, pp.~580--595, Springer, 2013.
-       
+
 [4] : Zhang, L., Wang, M., Liu, M., & Zhang, D. (1AD, January 1). A survey on Deep Learning for neuroimaging-based Brain Disorder Analysis. Frontiers.
